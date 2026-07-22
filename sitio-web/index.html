@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vive Esmeraldas - Turismo y Cultura</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+<h1>🌴 VIVE ESMERALDAS 🌴</h1>
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#categorias">Categorías</a>
+<a href="#catalogo">Catálogo</a>
+<a href="#favoritos">Favoritos</a>
+<a href="#reserva">Reserva</a>
+</nav>
+</header>
+
+<main>
+<section id="inicio" class="hero">
+<div>
+<h2>Catálogo de experiencias turísticas, culturales y recreativas</h2>
+<p>
+                    Descubre playas, cultura afroesmeraldeña, gastronomía,
+                    eventos y actividades familiares en la provincia de Esmeraldas.
+</p>
+<a href="#catalogo" class="btn">Explorar Experiencias</a>
+</div>
+</section>
+
+<section id="categorias">
+<h2>Categorías</h2>
+<div class="grid-categorias">
+<article class="categoria">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Playas de Esmeraldas">
+<div class="categoria-content">
+<h3>🏖️ Playas</h3>
+<p>Atacames, Tonsupa, Same, Mompiche y Las Palmas.</p>
+</div>
+</article>
+
+<article class="categoria">
+<img src="https://ec.viajandox.com/uploads/Festival%20Internacional%20de%20M%C3%BAsica%20y%20Danza_4.jpg" alt="Cultura Afroesmeraldeña">
+<div class="categoria-content">
+<h3>🎭 Cultura Afro</h3>
+<p>Tradiciones, costumbres y patrimonio cultural.</p>
+</div>
+</article>
+
+<article class="categoria">
+<img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=900&q=80" alt="Música y Danza Esmeraldas">
+<div class="categoria-content">
+<h3>🎵 Música y Danza</h3>
+<p>Marimba, arrullos y danza tradicional.</p>
+</div>
+</article>
+
+<article class="categoria">
+<img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80" alt="Gastronomía Esmeraldeña">
+<div class="categoria-content">
+<h3>🍤 Gastronomía</h3>
+<p>Encocados, ceviches, tapao y productos del mar.</p>
+</div>
+</article>
+
+<article class="categoria">
+<img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/48/ed/d0.jpg" alt="Recorridos históricos">
+<div class="categoria-content">
+<h3>🚶 Recorridos</h3>
+<p>Rutas históricas y culturales.</p>
+</div>
+</article>
+
+<article class="categoria">
+<img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80" alt="Naturaleza Esmeraldas">
+<div class="categoria-content">
+<h3>🌿 Naturaleza</h3>
+<p>Reservas ecológicas y senderos.</p>
+</div>
+</article>
+
+<article class="categoria">
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80" alt="Eventos en Esmeraldas">
+<div class="categoria-content">
+<h3>🎉 Eventos</h3>
+<p>Ferias, festivales y conciertos.</p>
+</div>
+</article>
+
+<article class="categoria">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Actividades en familia">
+<div class="categoria-content">
+<h3>👨‍👩‍👧‍👦 Familia</h3>
+<p>Parques y actividades recreativas.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="filtros">
+<input type="text" id="busqueda" placeholder="Buscar experiencia...">
+<select id="filtroCategoria">
+<option value="Todas">Todas las categorías</option>
+<option value="Playas">Playas</option>
+<option value="Cultura">Cultura Afro</option>
+<option value="Música y Danza">Música y Danza</option>
+<option value="Gastronomía">Gastronomía</option>
+<option value="Recorridos">Recorridos</option>
+<option value="Naturaleza">Naturaleza</option>
+<option value="Eventos">Eventos</option>
+<option value="Familia">Familia</option>
+</select>
+<select id="filtroPrecio">
+<option value="todos">Todos los precios</option>
+<option value="20">Hasta $20</option>
+<option value="40">Hasta $40</option>
+<option value="60">Hasta $60</option>
+</select>
+<select id="filtroDuracion">
+<option value="todas">Cualquier duración</option>
+<option value="2">Hasta 2 horas</option>
+<option value="5">Hasta 5 horas</option>
+<option value="8">Hasta 8 horas</option>
+</select>
+</section>
+
+<section id="catalogo">
+<h2>Experiencias</h2>
+<div id="cards" class="cards"></div>
+</section>
+
+<section id="favoritos">
+<h2>⭐ Mis Favoritos</h2>
+<p id="mensajeFavoritos">Aún no tienes favoritos. Toca el corazón 🤍 de una experiencia para agregarla.</p>
+<div id="listaFavoritos" class="cards"></div>
+</section>
+
+<section class="ruta">
+<h2>Calculadora de Ruta</h2>
+<p>Arma tu ruta agregando experiencias a favoritos y calcula el costo total.</p>
+<button onclick="calcularRuta()">Calcular costo estimado</button>
+<h3 id="resultadoRuta"></h3>
+</section>
+
+<section id="reserva">
+<h2>Formulario de Reserva</h2>
+<form id="formulario" novalidate>
+<label for="nombre">Nombre completo</label>
+<input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+<span class="error" id="errorNombre"></span>
+
+<label for="correo">Correo electrónico</label>
+<input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+<span class="error" id="errorCorreo"></span>
+
+<label for="fecha">Fecha de visita</label>
+<input type="date" id="fecha" name="fecha">
+<span class="error" id="errorFecha"></span>
+
+<label for="observaciones">Observaciones</label>
+<textarea id="observaciones" name="observaciones" placeholder="Observaciones"></textarea>
+
+<button type="submit">Reservar</button>
+<p id="mensajeReserva"></p>
+</form>
+</section>
+</main>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<span onclick="cerrarModal()">&times;</span>
+<div id="contenidoModal"></div>
+</div>
+</div>
+
+<footer>
+<h3>Vive Esmeraldas</h3>
+<p>Proyecto turístico, cultural y recreativo.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
