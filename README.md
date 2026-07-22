@@ -49,6 +49,12 @@ PRY3_VIVE_ESMERALDAS_1S_WD/
 
 ## 🚀 Cómo ver la página
 
+### Opción 1 — En línea (GitHub Pages)
+
+👉 **[https://renngio45-gif.github.io/PRY3_VIVE_ESMERALDAS_1S_WD/](https://renngio45-gif.github.io/PRY3_VIVE_ESMERALDAS_1S_WD/)**
+
+### Opción 2 — En tu computadora
+
 1. Descarga o clona este repositorio:
    ```bash
    git clone https://github.com/Renngio45-gif/PRY3_VIVE_ESMERALDAS_1S_WD.git
@@ -62,8 +68,12 @@ PRY3_VIVE_ESMERALDAS_1S_WD/
 - **CSS3** — diseño responsivo con Grid y Flexbox.
 - **JavaScript (vanilla)** — lógica del catálogo, filtros, favoritos con `localStorage`, modal y validación de formulario. Sin frameworks ni librerías externas.
 
-## 👤 Autor
+## 👥 Integrantes
 
-**Daniel Farías** — Proyecto final de Desarrollo Web, 1er semestre.
+Proyecto grupal — Desarrollo Web, 1er semestre:
+
+- **Geovanny Daniel Farías**
+- **Piero Gabriel García Olivo**
+- **Pablo Yela Monroy**
 
 > ⚠️ Nota académica: este es un proyecto educativo. Las experiencias, precios y reservas del catálogo son datos de demostración.
