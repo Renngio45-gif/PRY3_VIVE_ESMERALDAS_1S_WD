@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vive Esmeraldas - Buscador de Experiencias</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+<h1>🌴 VIVE ESMERALDAS 🌴</h1>
+<nav>
+<a href="index.html">Inicio</a>
+<a href="index.html#motivo">Motivo</a>
+<a href="experiencias.html">Galería</a>
+<a href="catalogo.html">Catálogo</a>
+<a href="index.html#favoritos">Favoritos</a>
+<a href="index.html#reserva">Reserva</a>
+</nav>
+</header>
+
+<main>
+<section class="galeria-intro">
+<h2>Buscador de Experiencias</h2>
+<p>
+    Escribe el nombre de una experiencia o usa los filtros para encontrar
+    lo que buscas. Para reservar, vuelve a la
+    <a href="index.html#reserva">página principal</a>.
+</p>
+</section>
+
+<section class="filtros">
+<input type="text" id="busqueda" placeholder="Buscar experiencia...">
+<select id="filtroCategoria">
+<option value="Todas">Todas las categorías</option>
+<option value="Playas">Playas</option>
+<option value="Cultura">Cultura Afro</option>
+<option value="Música y Danza">Música y Danza</option>
+<option value="Gastronomía">Gastronomía</option>
+<option value="Recorridos">Recorridos</option>
+<option value="Naturaleza">Naturaleza</option>
+<option value="Eventos">Eventos</option>
+<option value="Familia">Familia</option>
+</select>
+<select id="filtroPrecio">
+<option value="todos">Todos los precios</option>
+<option value="20">Hasta $20</option>
+<option value="40">Hasta $40</option>
+<option value="60">Hasta $60</option>
+</select>
+<select id="filtroDuracion">
+<option value="todas">Cualquier duración</option>
+<option value="2">Hasta 2 horas</option>
+<option value="5">Hasta 5 horas</option>
+<option value="8">Hasta 8 horas</option>
+</select>
+</section>
+
+<section id="resultados-busqueda">
+<div id="cards" class="cards"></div>
+</section>
+</main>
+
+<footer>
+<h3>Vive Esmeraldas</h3>
+<p>Proyecto turístico, cultural y recreativo.</p>
+<div class="footer-info">
+<p class="footer-equipo">Desarrollado por: <strong>Geovanny Daniel Farias Estupiñan</strong> · <strong>Pablo Yela Monrroy</strong> · <strong>Piero Garcia Olivo</strong></p>
+<p>Tecnología Superior en Desarrollo de Software</p>
+<p>Pontificia Universidad Católica del Ecuador — Sede Esmeraldas</p>
+<p class="footer-copy">© 2026 Vive Esmeraldas · Proyecto académico — Introducción al Desarrollo Web</p>
+</div>
+</footer>
+
+<a href="index.html#reserva" class="btn-flotante" title="Reserva tu experiencia" aria-label="Ir al formulario de reserva">
+<span class="btn-flotante-icono">📅</span>
+<span class="btn-flotante-texto">Reservar</span>
+</a>
+
+<script src="datos.js"></script>
+<script src="buscador.js"></script>
+</body>
+</html>

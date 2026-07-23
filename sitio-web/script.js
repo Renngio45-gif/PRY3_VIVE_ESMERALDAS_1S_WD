@@ -1,153 +1,55 @@
-const experiencias = [
-    {
-        nombre: "Playa Las Palmas",
-        categoria: "Playas",
-        precio: 50,
-        horario: "08:00 - 18:00",
-        duracion: 4,
-        recomendaciones: "Usar protector solar",
-        imagen: "https://i.ytimg.com/vi/crYihKtMbGs/sddefault.jpg",
-        descripcion: "Playa urbana ideal para turismo familiar.",
-        ubicacion: "Esmeraldas"
-    },
-    {
-        nombre: "Playa de Tonsupa",
-        categoria: "Playas",
-        precio: 30,
-        horario: "08:00 - 18:00",
-        duracion: 5,
-        recomendaciones: "Disfrutar del atardecer",
-        imagen: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
-        descripcion: "Playa urbana ideal para turismo familiar.",
-        ubicacion: "Tonsupa"
-    },
-    {
-        nombre: "Atacames",
-        categoria: "Playas",
-        precio: 20,
-        horario: "09:00 - 20:00",
-        duracion: 6,
-        recomendaciones: "Probar la comida típica a la orilla del mar",
-        imagen: "https://i.ytimg.com/vi/AJEPcXjO64U/maxresdefault.jpg",
-        descripcion: "Uno de los destinos más visitados del Ecuador.",
-        ubicacion: "Atacames"
-    },
-    {
-        nombre: "Festival Marimba",
-        categoria: "Cultura",
-        precio: 10,
-        horario: "18:00 - 22:00",
-        duracion: 3,
-        recomendaciones: "Asistir con ropa cómoda para bailar",
-        imagen: "https://ec.viajandox.com/uploads/Festival%20Internacional%20de%20M%C3%BAsica%20y%20Danza_4.jpg",
-        descripcion: "Música tradicional afroesmeraldeña.",
-        ubicacion: "Esmeraldas"
-    },
-    {
-        nombre: "Ruta Gastronómica",
-        categoria: "Gastronomía",
-        precio: 25,
-        horario: "12:00 - 16:00",
-        duracion: 3,
-        recomendaciones: "Probar el encocado de camarón",
-        imagen: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80",
-        descripcion: "Recorrido por la gastronomía local.",
-        ubicacion: "Centro"
-    },
-    {
-        nombre: "Reserva Mache Chindul",
-        categoria: "Naturaleza",
-        precio: 40,
-        horario: "07:00 - 16:00",
-        duracion: 8,
-        recomendaciones: "Llevar zapatos adecuados para montaña",
-        imagen: "https://pbs.twimg.com/media/FZu7eRrXEAMRECx.jpg",
-        descripcion: "Bosque tropical y biodiversidad.",
-        ubicacion: "Muisne"
-    },
-    {
-        nombre: "Tour Histórico",
-        categoria: "Recorridos",
-        precio: 15,
-        horario: "09:00 - 12:00",
-        duracion: 2,
-        recomendaciones: "Tomar nota de los datos históricos",
-        imagen: "https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/48/ed/d0.jpg",
-        descripcion: "Historia y patrimonio.",
-        ubicacion: "Esmeraldas"
-    },
-    {
-        nombre: "Mompiche",
-        categoria: "Playas",
-        precio: 18,
-        horario: "08:00 - 18:00",
-        duracion: 6,
-        recomendaciones: "Llevar tabla de surf si lo practicas",
-        imagen: "https://velturtravel.com/wp-content/uploads/DECAMERON-MOMPICHE2-1.jpg",
-        descripcion: "Surf y naturaleza.",
-        ubicacion: "Mompiche"
-    },
-    {
-        nombre: "Parque Familiar",
-        categoria: "Familia",
-        precio: 8,
-        horario: "09:00 - 17:00",
-        duracion: 2,
-        recomendaciones: "Ideal para ir con niños",
-        imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80",
-        descripcion: "Actividades para toda la familia.",
-        ubicacion: "Esmeraldas"
-    },
-    {
-        nombre: "Festival Cultural",
-        categoria: "Eventos",
-        precio: 5,
-        horario: "17:00 - 22:00",
-        duracion: 4,
-        recomendaciones: "Llegar temprano para conseguir buen puesto",
-        imagen: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80",
-        descripcion: "Presentaciones artísticas.",
-        ubicacion: "Malecón"
-    },
-    {
-        nombre: "Escuela de Marimba",
-        categoria: "Música y Danza",
-        precio: 12,
-        horario: "15:00 - 17:00",
-        duracion: 2,
-        recomendaciones: "Participar en las dinámicas de clase",
-        imagen: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80",
-        descripcion: "Aprendizaje musical.",
-        ubicacion: "Esmeraldas"
-    },
-    {
-        nombre: "Same",
-        categoria: "Playas",
-        precio: 22,
-        horario: "08:00 - 18:00",
-        duracion: 5,
-        recomendaciones: "Disfrutar del ambiente exclusivo",
-        imagen: "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=900&q=80",
-        descripcion: "Destino turístico premium.",
-        ubicacion: "Same"
-    },
-    {
-        nombre: "Feria Gastronómica",
-        categoria: "Eventos",
-        precio: 10,
-        horario: "10:00 - 15:00",
-        duracion: 3,
-        recomendaciones: "Probar los dulces tradicionales",
-        imagen: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
-        descripcion: "Comida típica esmeraldeña.",
-        ubicacion: "Esmeraldas"
-    }
-];
+// ===== Supuestos de cálculo (visibles para poder defenderlos) =====
+// Velocidades promedio por medio de transporte (km/h)
+const VELOCIDADES = { pie: 4, bus: 30, moto: 40, auto: 50 };
+// Gasolina en Ecuador: galón Extra/Ecopaís aprox. $2.50 - $3.00
+const PRECIO_GALON = { min: 2.50, max: 3.00 };
+// Rendimiento aproximado (km por galón)
+const RENDIMIENTO = { moto: 90, auto: 35 };
+// Pasaje de bus estimado por km (mínimo $0.35 por tramo)
+const BUS_POR_KM = { min: 0.05, max: 0.08 };
+const BUS_MINIMO = 0.35;
+// Punto de respaldo si el usuario no comparte su ubicación: centro de Esmeraldas
+const CENTRO_ESMERALDAS = { lat: 0.9682, lng: -79.6517 };
 
 const cards = document.getElementById("cards");
 const listaFavoritos = document.getElementById("listaFavoritos");
 
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+// ===== Ubicación del usuario (con permiso); respaldo: centro de Esmeraldas =====
+let posicionUsuario = null;
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        pos => { posicionUsuario = { lat: pos.coords.latitude, lng: pos.coords.longitude }; },
+        () => { posicionUsuario = null; },
+        { timeout: 8000 }
+    );
+}
+
+function origenActual() {
+    return posicionUsuario || CENTRO_ESMERALDAS;
+}
+
+function etiquetaOrigen() {
+    return posicionUsuario ? "tu ubicación" : "el centro de Esmeraldas";
+}
+
+// Distancia en línea recta entre dos coordenadas (fórmula de Haversine, en km)
+function distanciaKm(a, b) {
+    const R = 6371;
+    const dLat = (b.lat - a.lat) * Math.PI / 180;
+    const dLng = (b.lng - a.lng) * Math.PI / 180;
+    const h = Math.sin(dLat / 2) ** 2 +
+              Math.cos(a.lat * Math.PI / 180) * Math.cos(b.lat * Math.PI / 180) *
+              Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
+}
+
+// Las comidas se consumen en el sitio; suman como valor, no como recorrido
+function esConsumo(exp) {
+    return exp.categoria === "Gastronomía";
+}
 
 function esFavorito(nombre) {
     return favoritos.includes(nombre);
@@ -179,19 +81,27 @@ function mostrarFavoritos() {
     }
 }
 
+function imagenCard(exp) {
+    if (exp.imagen) {
+        return `<img src="${exp.imagen}" alt="${exp.nombre}">`;
+    }
+    const emoji = EMOJI_CATEGORIA[exp.categoria] || "🌴";
+    return `<div class="card-img-placeholder"><span>${emoji}</span><small>Imagen próximamente</small></div>`;
+}
+
 function crearCard(exp) {
     const i = experiencias.indexOf(exp);
     const fav = esFavorito(exp.nombre);
     return `
 <div class="card">
 <button class="fav-btn ${fav ? "activo" : ""}" onclick="toggleFavorito(${i})" title="${fav ? "Quitar de favoritos" : "Agregar a favoritos"}">${fav ? "❤️" : "🤍"}</button>
-<img src="${exp.imagen}" alt="${exp.nombre}">
+${imagenCard(exp)}
 <div class="card-body">
 <h3>${exp.nombre}</h3>
 <p>${exp.descripcion}</p>
 <p><strong>Categoría:</strong> ${exp.categoria}</p>
 <p><strong>Precio:</strong> $${exp.precio}</p>
-<p><strong>Duración:</strong> ${exp.duracion} horas</p>
+<p><strong>Estancia:</strong> ${textoEstancia(exp)}</p>
 <button class="btn-detalle" onclick="detalle(${i})">Ver Detalles</button>
 </div>
 </div>
@@ -210,16 +120,34 @@ const modal = document.getElementById("modal");
 
 function detalle(i) {
     const exp = experiencias[i];
+    const dist = distanciaKm(origenActual(), exp.coordenadas);
+    const mapsUrl = posicionUsuario
+        ? `https://www.google.com/maps/dir/?api=1&origin=${posicionUsuario.lat},${posicionUsuario.lng}&destination=${exp.coordenadas.lat},${exp.coordenadas.lng}`
+        : `https://www.google.com/maps/dir/?api=1&destination=${exp.coordenadas.lat},${exp.coordenadas.lng}`;
+
     document.getElementById("contenidoModal").innerHTML = `
-<img src="${exp.imagen}" alt="${exp.nombre}" style="width:100%; height:220px; object-fit:cover; border-radius:8px; margin-bottom:15px;">
+${exp.imagen
+    ? `<img src="${exp.imagen}" alt="${exp.nombre}" style="width:100%; height:220px; object-fit:cover; border-radius:8px; margin-bottom:15px;">`
+    : `<div class="card-img-placeholder" style="border-radius:8px; margin-bottom:15px;"><span>${EMOJI_CATEGORIA[exp.categoria] || "🌴"}</span><small>Imagen próximamente</small></div>`}
 <h2>${exp.nombre}</h2>
 <p>${exp.descripcion}</p>
 <p><strong>Ubicación:</strong> ${exp.ubicacion}</p>
 <p><strong>Categoría:</strong> ${exp.categoria}</p>
 <p><strong>Precio:</strong> $${exp.precio}</p>
 <p><strong>Horario:</strong> ${exp.horario}</p>
-<p><strong>Duración:</strong> ${exp.duracion} horas</p>
+<p><strong>Estancia estimada:</strong> ${textoEstancia(exp)}</p>
 <p><strong>Recomendaciones:</strong> ${exp.recomendaciones}</p>
+<div class="traslado-box">
+<p><strong>📍 Distancia aproximada:</strong> ${dist.toFixed(1)} km desde ${etiquetaOrigen()} (línea recta)</p>
+<p><strong>⏱️ Traslado estimado:</strong></p>
+<p class="traslado-tiempos">
+🚶 ${formatoTiempo(dist / VELOCIDADES.pie)} &nbsp;·&nbsp;
+🚌 ${formatoTiempo(dist / VELOCIDADES.bus)} &nbsp;·&nbsp;
+🏍️ ${formatoTiempo(dist / VELOCIDADES.moto)} &nbsp;·&nbsp;
+🚗 ${formatoTiempo(dist / VELOCIDADES.auto)}
+</p>
+<a class="btn-maps" href="${mapsUrl}" target="_blank" rel="noopener">🗺️ Cómo llegar (Google Maps)</a>
+</div>
 <button class="btn-reservar" onclick="reservarDesdeModal(${i})">📅 Reservar esta experiencia</button>
     `;
     modal.style.display = "flex";
@@ -247,19 +175,71 @@ function reservarDesdeModal(i) {
 function calcularRuta() {
     const resultado = document.getElementById("resultadoRuta");
     const favs = experiencias.filter(exp => esFavorito(exp.nombre));
+    const vehiculo = document.getElementById("vehiculo").value;
 
     if (favs.length === 0) {
         resultado.textContent = "⚠️ Agrega experiencias a favoritos (🤍) para armar tu ruta.";
         return;
     }
 
-    let total = 0;
-    let horas = 0;
+    let costoActividades = 0;
+    let horasEstancia = 0;
     favs.forEach(exp => {
-        total += exp.precio;
-        horas += exp.duracion;
+        costoActividades += exp.precio;
+        horasEstancia += exp.duracion;
     });
-    resultado.textContent = `Tu ruta tiene ${favs.length} experiencia(s): costo estimado $${total} y duración total de ${horas} horas.`;
+
+    // Distancia total: recorrido secuencial desde el origen visitando cada favorito.
+    // Las comidas (gastronomía) no cuentan como recorrido: se consumen en el sitio.
+    let distTotal = 0;
+    let puntoActual = origenActual();
+    let lugaresRuta = 0;
+    let comidasRuta = 0;
+    favs.forEach(exp => {
+        if (esConsumo(exp)) {
+            comidasRuta++;
+            return;
+        }
+        distTotal += distanciaKm(puntoActual, exp.coordenadas);
+        puntoActual = exp.coordenadas;
+        lugaresRuta++;
+    });
+
+    const horasTraslado = distTotal / VELOCIDADES[vehiculo];
+
+    // Costo de transporte según el vehículo elegido
+    let transporteMin = 0;
+    let transporteMax = 0;
+    let notaTransporte = "";
+
+    if (vehiculo === "pie") {
+        notaTransporte = "A pie no hay gasto de transporte.";
+    } else if (vehiculo === "bus") {
+        transporteMin = Math.max(distTotal * BUS_POR_KM.min, BUS_MINIMO);
+        transporteMax = Math.max(distTotal * BUS_POR_KM.max, BUS_MINIMO);
+        notaTransporte = "Pasajes de bus estimados según distancia.";
+    } else {
+        const galones = distTotal / RENDIMIENTO[vehiculo];
+        transporteMin = galones * PRECIO_GALON.min;
+        transporteMax = galones * PRECIO_GALON.max;
+        notaTransporte = `Gasolina estimada (galón $${PRECIO_GALON.min.toFixed(2)} - $${PRECIO_GALON.max.toFixed(2)}).`;
+    }
+
+    const totalMin = costoActividades + transporteMin;
+    const totalMax = costoActividades + transporteMax;
+    const nombreVehiculo = { pie: "a pie 🚶", bus: "en bus 🚌", moto: "en moto 🏍️", auto: "en auto 🚗" }[vehiculo];
+    const notaComidas = comidasRuta > 0
+        ? ` Incluye ${comidasRuta} comida(s) que suman al costo pero no al recorrido.`
+        : "";
+
+    resultado.innerHTML = `
+Tu ruta tiene ${favs.length} experiencia(s) ${nombreVehiculo}, midiendo desde ${etiquetaOrigen()}:<br>
+🎟️ Actividades: $${costoActividades.toFixed(2)} &nbsp;·&nbsp; 🕒 Estancia total: ${formatoTiempo(horasEstancia)}<br>
+📍 Recorrido aprox.: ${distTotal.toFixed(1)} km (${lugaresRuta} lugar(es)) &nbsp;·&nbsp; ⏱️ Traslado: ${formatoTiempo(horasTraslado)}<br>
+⛽ Transporte: ${vehiculo === "pie" ? "$0.00" : `$${transporteMin.toFixed(2)} - $${transporteMax.toFixed(2)}`}<br>
+💰 <strong>Total estimado: $${totalMin.toFixed(2)} - $${totalMax.toFixed(2)}</strong><br>
+<small>${notaTransporte}${notaComidas} Distancias en línea recta; el recorrido real por carretera puede variar.</small>
+    `;
 }
 
 document.getElementById("busqueda").addEventListener("input", filtrar);
