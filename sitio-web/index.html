@@ -4,65 +4,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vive Esmeraldas - Turismo y Cultura</title>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!-- ===== ENCABEZADO Y MENÚ DE NAVEGACIÓN ===== -->
 <header>
 <h1>🌴 VIVE ESMERALDAS 🌴</h1>
 <nav>
 <a href="#inicio">Inicio</a>
 <a href="#motivo">Motivo</a>
 <a href="#categorias">Categorías</a>
-<a href="experiencias.html">Galería</a>
-<a href="catalogo.html">Catálogo</a>
+<a href="#catalogo">Catálogo</a>
 <a href="#favoritos">Favoritos</a>
 <a href="#reserva">Reserva</a>
 </nav>
 </header>
 
 <main>
+
+<!-- ===== SECCIÓN DE PRESENTACIÓN (HERO) ===== -->
 <section id="inicio" class="hero">
 <div>
 <h2>Catálogo de experiencias turísticas, culturales y recreativas</h2>
-<p>
-                    Descubre playas, cultura afroesmeraldeña, gastronomía,
-                    eventos y actividades familiares en la provincia de Esmeraldas.
-</p>
+<p>Descubre playas, cultura afroesmeraldeña, gastronomía, eventos y actividades familiares en la provincia de Esmeraldas.</p>
 <a href="#catalogo" class="btn">Explorar Experiencias</a>
 </div>
 </section>
 
+<!-- ===== SECCIÓN MOTIVO: por qué hicimos la página ===== -->
 <section id="motivo">
 <h2>¿Por qué Vive Esmeraldas?</h2>
 <p class="motivo-intro">
-    La provincia de Esmeraldas posee una notable riqueza turística, cultural y recreativa:
-    playas reconocidas a nivel nacional, el patrimonio vivo de la cultura afroesmeraldeña,
-    una gastronomía única y diversos espacios naturales. Sin embargo, esta oferta
-    no contaba con una vitrina digital que la organice y la presente de forma unificada.
-    Identificamos tres problemas concretos:
+    La provincia de Esmeraldas posee una notable riqueza turística, cultural y recreativa, pero esta oferta
+    no contaba con una vitrina digital que la organice y la presente de forma unificada. Identificamos tres problemas:
 </p>
 <div class="motivo-grid">
 <div class="motivo-item">
 <span class="motivo-icono">🔍</span>
 <h3>Información dispersa</h3>
-<p>No existía un lugar único donde comparar opciones, precios y duraciones: todo estaba repartido entre redes sociales y el boca a boca.</p>
+<p>No existía un lugar único donde comparar opciones, precios y duraciones.</p>
 </div>
 <div class="motivo-item">
 <span class="motivo-icono">🙈</span>
 <h3>Experiencias invisibles</h3>
-<p>Las playas se conocen, pero los recorridos históricos, los festivales de marimba y las reservas naturales casi no tienen difusión.</p>
+<p>Recorridos, festivales de marimba y reservas naturales casi no tienen difusión.</p>
 </div>
 <div class="motivo-item">
 <span class="motivo-icono">🧭</span>
 <h3>Difícil planificar</h3>
-<p>El visitante no podía estimar cuánto costaría su visita, cuánto duraría, ni contaba con un canal organizado para reservar.</p>
+<p>El visitante no podía estimar costo ni tiempo, ni tenía dónde reservar.</p>
 </div>
 </div>
 <p class="motivo-solucion">
     💡 <strong>Nuestra respuesta:</strong> este catálogo web centraliza las experiencias de la provincia
-    para que explores por categoría, filtres por precio y duración, guardes tus favoritas,
-    calcules el costo y tiempo de tu ruta y dejes tu reserva — todo en un solo lugar,
+    para explorar por categoría, filtrar, guardar favoritas, calcular el costo de la ruta y reservar,
     impulsando la economía local y dando visibilidad al patrimonio afroesmeraldeño.
 </p>
 
@@ -89,92 +86,47 @@
 </div>
 </section>
 
+<!-- ===== SECCIÓN CATEGORÍAS (al hacer clic filtran el catálogo) ===== -->
 <section id="categorias">
 <h2>Categorías</h2>
 <div class="grid-categorias">
-<a class="categoria-link" href="experiencias.html#cat-playas">
-<article class="categoria">
+<article class="categoria" onclick="filtrarPorCategoria('Playas')">
 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Playas de Esmeraldas">
-<div class="categoria-content">
-<h3>🏖️ Playas</h3>
-<p>Atacames, Tonsupa, Same, Mompiche y Las Palmas.</p>
-</div>
+<div class="categoria-content"><h3>🏖️ Playas</h3><p>Atacames, Tonsupa, Same, Mompiche y Las Palmas.</p></div>
 </article>
-</a>
-
-<a class="categoria-link" href="experiencias.html#cat-cultura">
-<article class="categoria">
+<article class="categoria" onclick="filtrarPorCategoria('Cultura')">
 <img src="https://ec.viajandox.com/uploads/Festival%20Internacional%20de%20M%C3%BAsica%20y%20Danza_4.jpg" alt="Cultura Afroesmeraldeña">
-<div class="categoria-content">
-<h3>🎭 Cultura Afro</h3>
-<p>Tradiciones, costumbres y patrimonio cultural.</p>
-</div>
+<div class="categoria-content"><h3>🎭 Cultura Afro</h3><p>Tradiciones, costumbres y patrimonio cultural.</p></div>
 </article>
-</a>
-
-<a class="categoria-link" href="experiencias.html#cat-musica-y-danza">
-<article class="categoria">
+<article class="categoria" onclick="filtrarPorCategoria('Música y Danza')">
 <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=900&q=80" alt="Música y Danza Esmeraldas">
-<div class="categoria-content">
-<h3>🎵 Música y Danza</h3>
-<p>Marimba, arrullos y danza tradicional.</p>
-</div>
+<div class="categoria-content"><h3>🎵 Música y Danza</h3><p>Marimba, arrullos y danza tradicional.</p></div>
 </article>
-</a>
-
-<a class="categoria-link" href="experiencias.html#cat-gastronomia">
-<article class="categoria">
+<article class="categoria" onclick="filtrarPorCategoria('Gastronomía')">
 <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80" alt="Gastronomía Esmeraldeña">
-<div class="categoria-content">
-<h3>🍤 Gastronomía</h3>
-<p>Encocados, ceviches, tapao y productos del mar.</p>
-</div>
+<div class="categoria-content"><h3>🍤 Gastronomía</h3><p>Encocados, ceviches, tapao y productos del mar.</p></div>
 </article>
-</a>
-
-<a class="categoria-link" href="experiencias.html#cat-recorridos">
-<article class="categoria">
+<article class="categoria" onclick="filtrarPorCategoria('Recorridos')">
 <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/48/ed/d0.jpg" alt="Recorridos históricos">
-<div class="categoria-content">
-<h3>🚶 Recorridos</h3>
-<p>Rutas históricas y culturales.</p>
-</div>
+<div class="categoria-content"><h3>🚶 Recorridos</h3><p>Rutas históricas y culturales.</p></div>
 </article>
-</a>
-
-<a class="categoria-link" href="experiencias.html#cat-naturaleza">
-<article class="categoria">
+<article class="categoria" onclick="filtrarPorCategoria('Naturaleza')">
 <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80" alt="Naturaleza Esmeraldas">
-<div class="categoria-content">
-<h3>🌿 Naturaleza</h3>
-<p>Reservas ecológicas y senderos.</p>
-</div>
+<div class="categoria-content"><h3>🌿 Naturaleza</h3><p>Reservas ecológicas y senderos.</p></div>
 </article>
-</a>
-
-<a class="categoria-link" href="experiencias.html#cat-eventos">
-<article class="categoria">
+<article class="categoria" onclick="filtrarPorCategoria('Eventos')">
 <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80" alt="Eventos en Esmeraldas">
-<div class="categoria-content">
-<h3>🎉 Eventos</h3>
-<p>Ferias, festivales y conciertos.</p>
-</div>
+<div class="categoria-content"><h3>🎉 Eventos</h3><p>Ferias, festivales y conciertos.</p></div>
 </article>
-</a>
-
-<a class="categoria-link" href="experiencias.html#cat-familia">
-<article class="categoria">
+<article class="categoria" onclick="filtrarPorCategoria('Familia')">
 <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Actividades en familia">
-<div class="categoria-content">
-<h3>👨‍👩‍👧‍👦 Familia</h3>
-<p>Parques y actividades recreativas.</p>
-</div>
+<div class="categoria-content"><h3>👨‍👩‍👧‍👦 Familia</h3><p>Parques y actividades recreativas.</p></div>
 </article>
-</a>
 </div>
-<p class="categorias-hint">💡 Haz clic en una categoría para ver todas sus experiencias a detalle.</p>
+<p class="categorias-hint">💡 Haz clic en una categoría para filtrar el catálogo.</p>
 </section>
 
+<!-- ===== BUSCADOR Y FILTROS ===== -->
 <section class="filtros">
 <input type="text" id="busqueda" placeholder="Buscar experiencia...">
 <select id="filtroCategoria">
@@ -202,33 +154,28 @@
 </select>
 </section>
 
+<!-- ===== CATÁLOGO (las tarjetas las genera JavaScript) ===== -->
 <section id="catalogo">
 <h2>Experiencias</h2>
 <div id="cards" class="cards"></div>
 </section>
 
+<!-- ===== FAVORITOS ===== -->
 <section id="favoritos">
 <h2>⭐ Mis Favoritos</h2>
 <p id="mensajeFavoritos">Aún no tienes favoritos. Toca el corazón 🤍 de una experiencia para agregarla.</p>
 <div id="listaFavoritos" class="cards"></div>
 </section>
 
+<!-- ===== CALCULADORA DE RUTA (funcionalidad adicional) ===== -->
 <section class="ruta">
 <h2>Calculadora de Ruta</h2>
-<p>Arma tu ruta agregando experiencias a favoritos, elige tu medio de transporte y calcula el costo y tiempo total.</p>
-<div class="ruta-controles">
-<label for="vehiculo">Medio de transporte:</label>
-<select id="vehiculo">
-<option value="auto">🚗 Auto particular</option>
-<option value="bus">🚌 Bus</option>
-<option value="moto">🏍️ Moto</option>
-<option value="pie">🚶 A pie</option>
-</select>
+<p>Agrega experiencias a favoritos y calcula el costo y el tiempo total de tu ruta.</p>
 <button onclick="calcularRuta()">Calcular costo estimado</button>
-</div>
 <h3 id="resultadoRuta"></h3>
 </section>
 
+<!-- ===== FORMULARIO DE RESERVA + CONTACTO ===== -->
 <section id="reserva">
 <h2>Formulario de Reserva</h2>
 <form id="formulario" novalidate>
@@ -261,8 +208,10 @@
 </div>
 </div>
 </section>
+
 </main>
 
+<!-- ===== VENTANA DE DETALLES (modal, oculta hasta que se abre) ===== -->
 <div class="modal" id="modal">
 <div class="modal-content">
 <span onclick="cerrarModal()">&times;</span>
@@ -270,6 +219,13 @@
 </div>
 </div>
 
+<!-- ===== BOTÓN FLOTANTE DE RESERVA ===== -->
+<a href="#reserva" class="btn-flotante" title="Reserva tu experiencia">
+<span class="btn-flotante-icono">📅</span>
+<span class="btn-flotante-texto">Reservar</span>
+</a>
+
+<!-- ===== PIE DE PÁGINA ===== -->
 <footer>
 <h3>Vive Esmeraldas</h3>
 <p>Proyecto turístico, cultural y recreativo.</p>
@@ -281,12 +237,6 @@
 </div>
 </footer>
 
-<a href="#reserva" class="btn-flotante" title="Reserva tu experiencia" aria-label="Ir al formulario de reserva">
-<span class="btn-flotante-icono">📅</span>
-<span class="btn-flotante-texto">Reservar</span>
-</a>
-
-<script src="datos.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
