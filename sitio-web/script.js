@@ -1,15 +1,4 @@
-/* =========================================================
-   VIVE ESMERALDAS - script.js
-   Toda la lógica de la página en JavaScript.
-   Técnicas usadas (vistas en clase):
-   - Arrays de objetos (Clase 18)
-   - forEach() y filter() para recorrer y filtrar (Clase 18)
-   - Template literals e innerHTML para generar tarjetas (Clase 18)
-   - getElementById() y addEventListener() (Clase 16)
-   - Eventos input, change, click y submit (Clase 17 y 21)
-   - Validación con if / else, trim(), preventDefault() (Clase 17)
-   - localStorage para guardar favoritos (Clase 19)
-   ========================================================= */
+
 
 const experiencias = [
     { nombre: "Playa Las Palmas", categoria: "Playas", precio: 50, horario: "08:00 - 18:00", duracion: 4, franja: "mañana-tarde", recomendaciones: "Usar protector solar", imagen: "https://i.ytimg.com/vi/crYihKtMbGs/sddefault.jpg", descripcion: "Playa urbana ideal para turismo familiar.", ubicacion: "Esmeraldas" },
@@ -156,7 +145,7 @@ function filtrar() {
         return okTexto && okCategoria && okPrecio && okDuracion;
     });
 
-    mostrar(resultado);   // Mostramos el resultado del filtro
+    mostrar(resultado); 
 }
 
 function filtrarPorCategoria(categoria) {
