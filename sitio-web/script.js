@@ -278,5 +278,5 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
     this.reset();
 });
 
-mostrar(experiencias);    // Dibujamos el catálogo completo
-mostrarFavoritos();       // Dibujamos los favoritos guardados
+mostrar(experiencias);    
+mostrarFavoritos();       
