@@ -35,9 +35,9 @@ const EMOJI_CATEGORIA = {
     "Recorridos": "🚶", "Naturaleza": "🌿", "Eventos": "🎉", "Familia": "👨‍👩‍👧‍👦"
 };
 
-const cards = document.getElementById("cards");                 // Contenedor del catálogo
-const listaFavoritos = document.getElementById("listaFavoritos"); // Contenedor de favoritos
-const modal = document.getElementById("modal");                 // Ventana de detalles
+const cards = document.getElementById("cards");               
+const listaFavoritos = document.getElementById("listaFavoritos"); 
+const modal = document.getElementById("modal");               
 
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
@@ -45,7 +45,7 @@ function formatoTiempo(horas) {
     if (horas < 1) {
         return Math.round(horas * 60) + " min";   // Menos de 1 hora: mostramos minutos
     }
-    return horas + " h";                            // 1 hora o más: mostramos horas
+    return horas + " h";                          
 }
 
 function textoEstancia(exp) {
@@ -77,10 +77,10 @@ function mostrarFavoritos() {
     const favs = experiencias.filter(exp => esFavorito(exp.nombre));
 
     if (favs.length === 0) {
-        mensaje.style.display = "block";   // Mostramos el mensaje "aún no tienes favoritos"
-        listaFavoritos.innerHTML = "";     // Vaciamos el contenedor
+        mensaje.style.display = "block";   
+        listaFavoritos.innerHTML = "";     
     } else {
-        mensaje.style.display = "none";    // Ocultamos el mensaje
+        mensaje.style.display = "none";  
         listaFavoritos.innerHTML = "";
         favs.forEach(exp => {
             listaFavoritos.innerHTML += crearCard(exp);
@@ -97,8 +97,8 @@ function imagenCard(exp) {
 }
 
 function crearCard(exp) {
-    const i = experiencias.indexOf(exp);   // Posición de la experiencia en el arreglo
-    const fav = esFavorito(exp.nombre);    // ¿Es favorita? (para pintar el corazón)
+    const i = experiencias.indexOf(exp);   
+    const fav = esFavorito(exp.nombre);    
     const emoji = EMOJI_CATEGORIA[exp.categoria];
 
     return `
@@ -149,8 +149,8 @@ function filtrar() {
 }
 
 function filtrarPorCategoria(categoria) {
-    document.getElementById("filtroCategoria").value = categoria;  // Ponemos el filtro
-    filtrar();                                                     // Aplicamos el filtro
+    document.getElementById("filtroCategoria").value = categoria;  
+    filtrar();                                                    
     document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
 }
 
@@ -222,9 +222,9 @@ function mostrarError(idInput, idError, mensaje) {
     const error = document.getElementById(idError);
     error.textContent = mensaje;
     if (mensaje) {
-        input.classList.add("invalido");     // Pinta el campo de rojo
+        input.classList.add("invalido");   
     } else {
-        input.classList.remove("invalido");  // Quita el rojo
+        input.classList.remove("invalido"); 
     }
 }
 
