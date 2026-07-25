@@ -1,13 +1,4 @@
-/* =========================================================
-   VIVE ESMERALDAS - styles.css
-   Estilos de la página. Técnicas usadas (vistas en clase):
-   - Box Model: padding, margin, border, border-radius (Clase 7)
-   - Flexbox para menús y filas (Clase 9)
-   - CSS Grid para las cuadrículas de tarjetas (Clase 11)
-   - position, z-index, object-fit (Clase 13)
-   - Diseño responsive con media queries (Clase 10)
-   Paleta verde de Esmeraldas (colores en hexadecimal).
-   ========================================================= */
+
 
 * {
   margin: 0;
@@ -30,7 +21,7 @@ h1, h2, h3 {
   font-family: Georgia, 'Times New Roman', serif;
 }
 
-/* ===== ENCABEZADO Y MENÚ (Flexbox + position sticky) ===== */
+
 header {
   background: #04342C;
   color: white;
@@ -64,7 +55,7 @@ nav a:hover {
   color: #EF9F27;
 }
 
-/* ===== SECCIÓN DE PRESENTACIÓN (HERO) ===== */
+
 .hero {
   height: 80vh;
   display: flex;
@@ -114,7 +105,6 @@ nav a:hover {
   color: #0F6E56;
 }
 
-/* ===== ESTILO GENERAL DE LAS SECCIONES ===== */
 section {
   padding: 60px 8%;
   scroll-margin-top: 80px;
@@ -129,7 +119,7 @@ section > h2 {
   padding-bottom: 8px;
 }
 
-/* ===== SECCIÓN MOTIVO ===== */
+
 #motivo {
   text-align: center;
 }
@@ -238,7 +228,7 @@ section > h2 {
   font-style: italic;
 }
 
-/* ===== CATEGORÍAS (CSS Grid) ===== */
+
 .grid-categorias {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -459,7 +449,7 @@ section > h2 {
   color: #5F5E5A;
 }
 
-/* ===== VENTANA DE DETALLES (modal, position fixed) ===== */
+
 .modal {
   display: none;
   position: fixed;
@@ -529,7 +519,7 @@ section > h2 {
   color: white;
 }
 
-/* ===== CALCULADORA DE RUTA ===== */
+
 .ruta {
   text-align: center;
   background: #04342C;
@@ -568,7 +558,7 @@ section > h2 {
   font-size: 1.1rem;
 }
 
-/* ===== FORMULARIO DE RESERVA ===== */
+
 #reserva {
   text-align: center;
 }
@@ -644,7 +634,7 @@ form button:hover {
   background: #04342C;
 }
 
-/* ===== BLOQUE DE CONTACTO ===== */
+
 .contacto-box {
   max-width: 600px;
   margin: 30px auto 0;
@@ -685,7 +675,7 @@ form button:hover {
   color: #04342C;
 }
 
-/* ===== BOTÓN FLOTANTE DE RESERVA (position fixed) ===== */
+
 .btn-flotante {
   position: fixed;
   bottom: 25px;
@@ -712,7 +702,7 @@ form button:hover {
   font-size: 1.3rem;
 }
 
-/* ===== PIE DE PÁGINA ===== */
+
 footer {
   background: #04342C;
   color: #E1F5EE;
@@ -744,7 +734,7 @@ footer h3 {
   font-size: 0.8rem;
 }
 
-/* ===== DISEÑO RESPONSIVE (Clase 10: media queries) ===== */
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
