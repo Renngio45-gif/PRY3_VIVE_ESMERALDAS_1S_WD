@@ -1,6 +1,5 @@
 
 const experiencias = [
-    
     { 
         nombre: "Playa Las Palmas", 
         categoria: "Playas", 
@@ -61,8 +60,6 @@ const experiencias = [
         descripcion: "Destino turístico premium.", 
         ubicacion: "Same" 
     },
-
-    
     { 
         nombre: "Festival Marimba", 
         categoria: "Cultura", 
@@ -75,8 +72,6 @@ const experiencias = [
         descripcion: "Música tradicional afroesmeraldeña.", 
         ubicacion: "Esmeraldas" 
     },
-
-  
     { 
         nombre: "Fiesta Esmeraldeñas", 
         categoria: "Eventos", 
@@ -113,8 +108,6 @@ const experiencias = [
         descripcion: "Desfiles, música y celebración cívica de la provincia.", 
         ubicacion: "Esmeraldas" 
     },
-
-   
     { 
         nombre: "Parque de las Palmas", 
         categoria: "Familia", 
@@ -139,8 +132,6 @@ const experiencias = [
         descripcion: "Centro de diversión acuática para toda la familia.", 
         ubicacion: "Atacames" 
     },
-
-    
     { 
         nombre: "Encocao de Mariscos", 
         categoria: "Gastronomía", 
@@ -189,7 +180,6 @@ const experiencias = [
         descripcion: "Dulce artesanal de coco, herencia afroesmeraldeña.", 
         ubicacion: "Malecón Las Palmas" 
     },
-
     { 
         nombre: "Escuela de Marimba", 
         categoria: "Música y Danza", 
@@ -202,8 +192,6 @@ const experiencias = [
         descripcion: "Aprendizaje musical.", 
         ubicacion: "Esmeraldas" 
     },
-
-  
     { 
         nombre: "Reserva Mache Chindul", 
         categoria: "Naturaleza", 
@@ -264,8 +252,6 @@ const experiencias = [
         descripcion: "Área marina protegida con arrecifes y vida submarina.", 
         ubicacion: "Punta Galera, Muisne" 
     },
-
-  
     { 
         nombre: "Museo y Centro Cultural Esmeraldas", 
         categoria: "Recorridos", 
@@ -326,6 +312,8 @@ const experiencias = [
         descripcion: "Inmersión cultural con la nacionalidad Chachi en el río Canandé.", 
         ubicacion: "Río Canandé, Quinindé" 
     }
+   
+       
 ];
 
 const EMOJI_CATEGORIA = {
@@ -339,15 +327,12 @@ const EMOJI_CATEGORIA = {
     "Familia": "👨‍👩‍👧‍👦"
 };
 
+let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
 
 const cards = document.getElementById("cards");
 const listaFavoritos = document.getElementById("listaFavoritos");
 const modal = document.getElementById("modal");
-
-let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-
-
 
 
 function formatoTiempo(horas) {
@@ -371,7 +356,6 @@ function imagenCard(exp) {
     const emoji = EMOJI_CATEGORIA[exp.categoria];
     return '<div class="card-img-placeholder"><span>' + emoji + '</span><small>Imagen próximamente</small></div>';
 }
-
 
 
 function esFavorito(nombre) {
@@ -410,8 +394,26 @@ function mostrarFavoritos() {
     });
 }
 
+function calcularRuta() {
+    const resultado = document.getElementById("resultadoRuta");
+    const favs = experiencias.filter(exp => esFavorito(exp.nombre));
 
+    if (favs.length === 0) {
+        resultado.textContent = "⚠️ Agrega experiencias a favoritos (🤍) para armar tu ruta.";
+        return;
+    }
 
+    let costoTotal = 0;
+    let tiempoTotal = 0;
+    favs.forEach(exp => {
+        costoTotal += exp.precio;
+        tiempoTotal += exp.duracion;
+    });
+
+    resultado.textContent = "Tu ruta tiene " + favs.length +
+        " experiencia(s): costo total de $" + costoTotal +
+        " y tiempo total de " + formatoTiempo(tiempoTotal) + ".";
+}
 
 function crearCard(exp) {
     const i = experiencias.indexOf(exp);
@@ -447,9 +449,6 @@ function mostrar(lista) {
     });
 }
 
-
-
-
 function filtrar() {
     const texto = document.getElementById("busqueda").value.toLowerCase();
     const categoria = document.getElementById("filtroCategoria").value;
@@ -475,12 +474,11 @@ function filtrarPorCategoria(categoria) {
     document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
 }
 
+
 document.getElementById("busqueda").addEventListener("input", filtrar);
 document.getElementById("filtroCategoria").addEventListener("change", filtrar);
 document.getElementById("filtroPrecio").addEventListener("change", filtrar);
 document.getElementById("filtroDuracion").addEventListener("change", filtrar);
-
-
 
 
 function detalle(i) {
@@ -519,34 +517,6 @@ function reservarDesdeModal(i) {
     document.getElementById("observaciones").value = "Quiero reservar: " + exp.nombre;
     document.getElementById("reserva").scrollIntoView({ behavior: "smooth" });
 }
-
-
-
-
-function calcularRuta() {
-    const resultado = document.getElementById("resultadoRuta");
-    const favs = experiencias.filter(exp => esFavorito(exp.nombre));
-
-    if (favs.length === 0) {
-        resultado.textContent = "⚠️ Agrega experiencias a favoritos (🤍) para armar tu ruta.";
-        return;
-    }
-
-    let costoTotal = 0;
-    let tiempoTotal = 0;
-    favs.forEach(exp => {
-        costoTotal += exp.precio;
-        tiempoTotal += exp.duracion;
-    });
-
-    resultado.textContent = "Tu ruta tiene " + favs.length +
-        " experiencia(s): costo total de $" + costoTotal +
-        " y tiempo total de " + formatoTiempo(tiempoTotal) + ".";
-}
-
-
-
-
 function mostrarError(idInput, idError, mensaje) {
     const input = document.getElementById(idInput);
     const error = document.getElementById(idError);
@@ -560,7 +530,7 @@ function mostrarError(idInput, idError, mensaje) {
 }
 
 document.getElementById("formulario").addEventListener("submit", function (e) {
-    e.preventDefault(); // Evitamos que la página se recargue
+    e.preventDefault(); 
 
     const nombre = document.getElementById("nombre").value.trim();
     const correo = document.getElementById("correo").value.trim();
@@ -568,7 +538,6 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     const mensajeReserva = document.getElementById("mensajeReserva");
     let valido = true; 
 
-    
     if (nombre === "") {
         mostrarError("nombre", "errorNombre", "El nombre es obligatorio.");
         valido = false;
@@ -578,7 +547,7 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     } else {
         mostrarError("nombre", "errorNombre", "");
     }
-
+   
     const formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (correo === "") {
         mostrarError("correo", "errorCorreo", "El correo es obligatorio.");
@@ -590,7 +559,6 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
         mostrarError("correo", "errorCorreo", "");
     }
 
-    
     const hoy = new Date().toISOString().split("T")[0];
     if (fecha === "") {
         mostrarError("fecha", "errorFecha", "Selecciona una fecha para tu visita.");
@@ -610,7 +578,6 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     mensajeReserva.textContent = "✅ ¡Gracias " + nombre + "! Tu reserva para el " + fecha + " fue enviada correctamente.";
     this.reset();
 });
-
 
 mostrar(experiencias);
 mostrarFavoritos();
