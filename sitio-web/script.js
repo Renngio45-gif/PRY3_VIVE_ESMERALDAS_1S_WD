@@ -97,7 +97,7 @@ const experiencias = [
         duracion: 3, 
         franja: "Mañana-Tarde", 
         recomendaciones: "Probar los dulces tradicionales", 
-        imagen: "https://esmeraldas.gob.ec/media/k2/items/cache/15af91003feb7702e5dbaacbf2f17e89_XL.jpg", 
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuLgCWdPIZeLoeb5_u866SFUbgTvwlMgHItOob8F3f8g&s=10",
         descripcion: "Comida típica esmeraldeña.", 
         ubicacion: "Esmeraldas" 
     },
